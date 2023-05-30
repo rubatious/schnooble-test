@@ -7,14 +7,20 @@ let currentWord = words[Math.floor(Math.random() * words.length)];
 // Store the player's guesses and their results
 let guesses = [];
 
+// Keep track of the player's score
+let score = 0;
+
 // This function is called when the player submits a guess
 function submitGuess() {
     // Get the player's guess from the input field
     let guess = document.getElementById("guess-input").value.toLowerCase();
     
+    // Increment the score
+    score++;
+
     // Check if the guess is correct
     if (guess === currentWord) {
-        alert("Congratulations! You guessed the word correctly.");
+        alert("Congratulations! You guessed the word correctly. Your score: " + score);
         // Reset the game after a correct guess
         resetGame();
     } else {
@@ -24,6 +30,7 @@ function submitGuess() {
         displayGuesses();
     }
 }
+
 
 // This function gives feedback on the player's guess
 function getFeedback(guess) {
@@ -53,6 +60,8 @@ function displayGuesses() {
 function resetGame() {
     currentWord = words[Math.floor(Math.random() * words.length)];
     guesses = [];
+    score = 0;  // Reset the score
     document.getElementById("guess-input").value = "";
     displayGuesses();
 }
+

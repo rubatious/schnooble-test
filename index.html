@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- The rest of the head is the same... -->
+        <title>Schnooble</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #fafafa;
+            }
+            .container {
+                text-align: center;
+            }
+            #guess-input {
+                width: 200px;
+                height: 40px;
+                font-size: 20px;
+            }
+            #guesses {
+                margin-top: 20px;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
             <h1>Schnooble</h1>
             <input id="guess-input" type="text" placeholder="Enter your guess" />
             <button id="submit-guess" onclick="submitGuess()">Submit</button>
-            <div id="score">Score: 0</div>  <!-- New element to display the score -->
             <div id="guesses">
                 <!-- Previous guesses and their results will appear here -->
             </div>
